@@ -1,0 +1,28 @@
+package com.koreait.examplefragment2;
+
+import androidx.appcompat.app.AppCompatActivity;
+import androidx.fragment.app.FragmentManager;
+
+import android.os.Bundle;
+
+public class MainActivity extends AppCompatActivity {
+    ListFragment listFragment;
+    ViewerFragment viewerFragment;
+
+    int[] images = {R.drawable.dream01, R.drawable.dream02, R.drawable.dream03};
+
+    @Override
+    protected void onCreate(Bundle savedInstanceState) {
+        super.onCreate(savedInstanceState);
+        setContentView(R.layout.activity_main);
+
+        FragmentManager manager = getSupportFragmentManager();
+        listFragment = (ListFragment) manager.findFragmentById(R.id.listFragment);
+        viewerFragment = (ViewerFragment) manager.findFragmentByid(R.id.viewerFragment);
+    }
+
+    @Override
+    public void OnImageSelected(int position) {
+        viewerFragment.setImage(image[position]);
+    }
+}

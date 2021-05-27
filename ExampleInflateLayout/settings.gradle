@@ -1,0 +1,2 @@
+rootProject.name = "ExampleInflateLayout"
+include ':app'
